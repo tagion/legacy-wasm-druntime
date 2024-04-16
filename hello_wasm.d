@@ -10,6 +10,14 @@ class A {
 
 
 extern(C) @nogc {
+    import core.sys.wasi.link;
+    int dl_iterate_phdr(dl_iterate_phdr_cb __callback, void*__data) {
+        char[128] __dummy;    
+        // printf("%s %p callback=%p\n", &__FUNCTION__[0], __data, &__callback);
+        /// wasmer does not run if we don't do this for some odd reason?
+        sprintf(&__dummy[0], "%p\n",  __data);
+        return __callback(null, 0, __data);
+    }
 void _Unwind_Resume(void* x) {
     printf("%s\n", &__FUNCTION__[0]);
 }

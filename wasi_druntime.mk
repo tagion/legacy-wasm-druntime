@@ -84,9 +84,6 @@ ways: $(LIB_DIR)/.way
 	mkdir -p $(@D)
 	touch $@
 
-test81: $(COBJS)
-
-
 $(COBJS)&: $(CFILES)| $(OBJ_DIR)/c/.way  
 	@echo C objects 
 	cd $(OBJ_DIR)/c; clang $^ -c $(CFLAGS)
@@ -126,12 +123,4 @@ clean-druntime:
 
 clean: clean-druntime
 
-test79:
-	find $(PHOBOS_SRC) -name "*.c"
-
-test80:
-	@echo $(TARGET_DIR)
-	@echo $(OBJ_DIR)
-	@echo $(COBJS)
-	@echo $(CFILES)
 

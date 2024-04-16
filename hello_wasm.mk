@@ -38,6 +38,8 @@ run: $(LIBS)
 
 run: wasm-run
 
+all: $(LIBS) $(MAIN)
+
 wasm-env:
 	@echo DFILES=$(DFILES)
 	@echo DOBJS=$(DOBJS)

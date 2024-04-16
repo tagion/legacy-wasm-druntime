@@ -23,7 +23,7 @@ ifdef USE_LDC_BUILD_RUNTIME
 include ldc_runtime.mk
 else
 include wasi_druntime.mk 
-all: druntime phobos
+#all: libdruntime libphobos
 endif
 
 include hello_wasm.mk
@@ -36,6 +36,8 @@ help:
 	@echo "make spull     : All the submodules can be pull by"
 	@echo
 	@echo "make all       : Build all"
+	@echo
+	@echo "make native    : Build native"
 	@echo
 	@echo "make help      : Prints this help text"
 	@echo
