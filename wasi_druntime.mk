@@ -86,7 +86,7 @@ ways: $(LIB_DIR)/.way
 
 $(COBJS)&: $(CFILES)| $(OBJ_DIR)/c/.way  
 	@echo C objects 
-	cd $(OBJ_DIR)/c; clang $^ -c $(CFLAGS)
+	cd $(OBJ_DIR)/c; clang $^ -c $(CFLAGS) -Wno-implicit-function-declaration
 	#touch $@
 	
 
